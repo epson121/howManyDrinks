@@ -18,15 +18,16 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
         public static final int myshape=0x7f020005;
         public static final int pelin_01=0x7f020006;
+        public static final int pitcher=0x7f020007;
+        public static final int pitcher2=0x7f020008;
     }
     public static final class id {
-        public static final int button_change=0x7f080004;
         public static final int button_minus=0x7f080003;
-        public static final int button_reset=0x7f080005;
+        public static final int button_reset=0x7f080004;
         public static final int button_update=0x7f080001;
         public static final int layout=0x7f080000;
         public static final int menu_layout=0x7f080002;
-        public static final int menu_settings=0x7f080006;
+        public static final int menu_settings=0x7f080005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

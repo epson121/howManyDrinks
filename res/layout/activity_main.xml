@@ -13,11 +13,12 @@
         android:layout_width="190dp"
         android:layout_height="180dp"
         android:layout_gravity="center"
-        android:background="@drawable/beer"
-        android:gravity="center_horizontal|center_vertical"
+        android:background="@drawable/pitcher"
+        android:gravity="right|center_vertical"
         android:textColor="@android:color/black"
         android:text="@string/nula"
-        android:textSize="120sp" 
+        android:typeface="monospace"
+        android:textSize="70sp"
         android:clickable="true">
     </Button>
 
@@ -38,15 +39,6 @@
             android:textSize="16sp" 
             android:clickable="true">
         </Button>
-
-        <Button
-            android:id="@+id/button_change"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/badel"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:clickable="true" />
 
         <Button
             android:id="@+id/button_reset"

@@ -15,7 +15,6 @@ public class MyWidgetProvider extends AppWidgetProvider {
 	private static final String ACTION_CLICK = "ClickWidget";
 	private static final String ACTION_RESET = "ResetWidget";
 	private static final String ACTION_MINUS = "MinusWidget";
-	private static final String ACTION_CHANGE = "ChangeWidget";
 
 	private RemoteViews remoteViews;
 
@@ -50,16 +49,10 @@ public class MyWidgetProvider extends AppWidgetProvider {
 		PendingIntent minusAPI = PendingIntent.getBroadcast(context, 0,
 				minusIntent, 0);
 
-		Intent changeIntent = new Intent(context, MyWidgetProvider.class);
-		changeIntent.setAction(ACTION_CHANGE);
-		PendingIntent changeAPI = PendingIntent.getBroadcast(context, 0,
-				changeIntent, 0);
-
 		remoteViews.setOnClickPendingIntent(R.id.button_update,
 				actionPendingIntent);
 		remoteViews.setOnClickPendingIntent(R.id.button_reset, resetAPI);
 		remoteViews.setOnClickPendingIntent(R.id.button_minus, minusAPI);
-		remoteViews.setOnClickPendingIntent(R.id.button_change, changeAPI);
 
 
 		AppWidgetManager.getInstance(context)
@@ -142,31 +135,6 @@ public class MyWidgetProvider extends AppWidgetProvider {
 							i.toString());
 				}
 
-				editor.commit();
-
-			}
-			if (intent.getAction().equals(ACTION_CHANGE)) {
-
-				prefs = context.getSharedPreferences("", Context.MODE_PRIVATE);
-				editor = prefs.edit();
-
-				if (prefs.getBoolean("drink", true) == true) {
-					remoteViews.setTextViewText(R.id.button_update,
-							String.valueOf(prefs.getInt("shooter", 50)));
-					remoteViews.setInt(R.id.button_update,
-							"setBackgroundResource", R.drawable.badel);
-					remoteViews.setInt(R.id.button_change,
-							"setBackgroundResource", R.drawable.beer);
-					editor.putBoolean("drink", false);
-				} else {
-					remoteViews.setTextViewText(R.id.button_update,
-							String.valueOf(prefs.getInt("number", 50)));
-					remoteViews.setInt(R.id.button_update,
-							"setBackgroundResource", R.drawable.beer);
-					remoteViews.setInt(R.id.button_change,
-							"setBackgroundResource", R.drawable.badel);
-					editor.putBoolean("drink", true);
-				}
 				editor.commit();
 
 			}
